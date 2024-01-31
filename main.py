@@ -26,16 +26,11 @@ def read_root(request: Request):
 
 @app.post("/submit_username/")
 def submit_username(username: str = Form(...), db: Session = Depends(get_db)):
-    # Check if the username already exists
     if db.query(User).filter(User.username == username).first():
         raise HTTPException(status_code=400, detail="Username already taken")
-
-    # Save the username to the database
     db_user = User(username=username)
     db.add(db_user)
     db.commit()
-
-    # Use HTMLResponse with content type explicitly set
     return HTMLResponse(content=f"""
     <html>
     <head>
@@ -54,7 +49,6 @@ def get_settings():
 
 @app.get("/user/{username}", response_class=HTMLResponse)
 def show_user_page(username: str, request: Request, db: Session = Depends(get_db), settings: dict = Depends(get_settings)):
-    # Fetch user details from the database
     db_user = db.query(User).filter(User.username == username).first()
     if not db_user:
         raise HTTPException(status_code=404, detail="User not found")
