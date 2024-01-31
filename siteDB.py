@@ -16,8 +16,5 @@ class User(Base):
 
 engine = create_engine(DATABASE_URL)
 
-# Create tables
 Base.metadata.create_all(bind=engine)
-
-# Create a Session class to use throughout the app
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
