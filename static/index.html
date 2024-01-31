@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webiste</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <h1>webiste</h1>
+
+    <label for="inputBox">Input:</label>
+    <input type="text" id="inputBox">
+    <br>
+
+    <button onclick="showOutput()">Show Output 1</button>
+    <button onclick="showOutput2()">Show Output 2</button>
+    <br>
+
+    <div id="output">Output will appear here</div>
+
+    <script>
+        function showOutput() {
+            var inputValue = document.getElementById('inputBox').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = "You entered: " + inputValue;
+        }
+        function showOutput2() {
+            var inputValue = document.getElementById('inputBox').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = "You typed: " + inputValue;
+        }
+    </script>
+</body>
+</html>
