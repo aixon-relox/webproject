@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Username</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        body {
+            background-image: url('/static/blurred-color-background-gradient-design_437781-1073.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #0066cc;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Enter Your Username</h1>
+
+    <form action="/submit_username/" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
